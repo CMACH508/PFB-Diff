@@ -1,23 +1,12 @@
-## IA-FaceS — Official PyTorch Implementation
+## PFB-Diff — Official PyTorch Implementation
 
 ---
 
-This repository contains  the **supplementary material** and  the **official PyTorch implementation** of the paper:<br />
+This repository contains the **official PyTorch implementation** of the paper:
 
-**IA-FaceS: A Bidirectional Method for Semantic Face Editing**
+**PFB-Diff: Progressive Feature Blending Diffusion for Text-driven Image Editing**
 
-> **Abstract:** *Semantic face editing has achieved substantial progress in recent years. However, existing face editing methods, which often encode the entire image into a single code, still have difficulty in enabling flexible editing while keeping high-fidelity reconstruction. The one-code scheme also brings entangled face manipulations and limited flexibility in editing face components. In this paper, we present IA-FaceS, a bidirectional method for disentangled face attribute manipulation as well as flexible, controllable component editing. We propose to embed images onto two branches: one branch computes high- dimensional component-invariant content embedding for capturing face details, and the other provides low-dimensional component-specific embeddings for component manipulations. The two-branch scheme naturally enables high-quality facial component-level editing while keeping faithful reconstruction with details. Moreover, we devise a component adaptive modulation (CAM) module, which integrates component- specific guidance into the decoder and successfully disentangles highly-correlated face components. The single-eye editing is developed for the first time without editing face masks or sketches. According to the experimental results, IA-FaceS establishes a good balance between maintaining image details and performing flexible face manipulation. Both quantitative and qualitative results indicate that the proposed method outperforms the existing methods in reconstruction, face attribute manipulation, and component transfer.*
-
-## Demo video and supplementary file
-
----
-
-Supplementary materials related to our paper are available at the following links:
-
-| **Path**                                                     | **Description**                  |
-| ------------------------------------------------------------ | -------------------------------- |
-| [supplementary_material.pdf](https://drive.google.com/file/d/1fQTBCDFOWASF5awpqTBlu5iO4pgUVtoq/view?usp=sharing) | Supplementary file for IA-FaceS. |
-| [IA-FaceS_demo.mp4](https://drive.google.com/file/d/1Rc6Licj_Trch7kWQhspOzozeJ7jbJgtH/view?usp=sharing) | The video demo of IA-FaceS.      |
+> **Abstract:** *Diffusion models have showcased their remarkable capability to synthesize diverse and high-quality images, sparking interest in their application for real image editing. However, existing diffusion-based approaches for local image editing often suffer from undesired artifacts due to the latent-level blending of the noised target images and diffusion latent variables, which lack the necessary semantics for maintaining image consistency. To address these issues, we propose PFB-Diff, a Progressive Feature Blending method for Diffusion-based image editing. Unlike previous methods, PFB-Diff seamlessly integrates text-guided generated content into the target image through multi-level feature blending. The rich semantics encoded in deep features and the progressive blending scheme from high to low levels ensure semantic coherence and high quality in edited images. Additionally, we introduce an attention masking mechanism in the cross-attention layers to confine the impact of specific words to desired regions, further improving the performance of background editing. PFB-Diff can effectively address various editing tasks, including object/background replacement and object attribute editing. Our method demonstrates its superior performance in terms of editing accuracy and image quality without the need for fine-tuning or training. *
 
 ## Installation
 
@@ -25,98 +14,45 @@ Supplementary materials related to our paper are available at the following link
 
 Install the dependencies:
 ```bash
-conda create -n iafaces python=3.7
-conda activate iafaces
-conda install pytorch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 cudatoolkit=11.0 -c pytorch
+conda create -n pfb-diff python=3.8
+conda activate pfb-diff
+conda install pytorch==1.11.0 torchvision==0.12.0 torchaudio==0.11.0 cudatoolkit=11.3 -c pytorch
 pip install -r requirements.txt
 ```
-For docker users:
+Before running [**pfbdiff.ipynb**](https://github.com/CMACH508/PFB-Diff/blob/main/pdfbdiff.ipynb), run the following command to add the virtual environment pfb-diff to the jupyter kernel:
 
 ```bash
-docker pull huangwenjingcs/ubuntu18-conda-cuda11-pytorch1.7
+python -m ipykernel install --user --name=pfb-diff
 ```
 
-## Datasets and pre-trained networks
+## Quick start
 
 ---
 
-To obtain the CelebA-HQ dataset, please refer to the [Progressive GAN repository](https://github.com/tkarras/progressive_growing_of_gans). The official way of generating CelebA-HQ can be challenging. You can get the pre-generated dataset from [CelebA-HQ-dataset](https://drive.google.com/file/d/17wOT2Du1oKMU8DtRWupR_m1mgWvnGl1I/view?usp=sharing). Unzip the file and put the images to "data/CelebA-HQ-img/".
+For a quick start, we recommend taking a look at the notebook: [**pfbdiff.ipynb**](https://github.com/CMACH508/PFB-Diff/blob/main/pdfbdiff.ipynb). The notebook contains end-to-end examples of the usage of PFB-Diff in image editing.
 
-To obtain the  Flickr-Faces-HQ Dataset (FFHQ), please refer to [ffhq-dataset](https://github.com/NVlabs/ffhq-dataset). Download the dataset and put the images to "data/ffhq-images1024/".
-
-Pre-trained models can be found via the following links:
-
-| Path                                                         | Description                                             |
-| ------------------------------------------------------------ | ------------------------------------------------------- |
-| [checkpoint](https://drive.google.com/drive/folders/12XOUqeCVB8EDdU-d6JAszyzoKD7ms4qV?usp=share_link) | Main folder.                                            |
-| ├  [iafaces-celebahq-256.pth](https://drive.google.com/file/d/1tHXOpMn7AGUYVmgDU-8oVRhcYims9jjZ/view?usp=share_link) | IA-FaceS trained with CelebA-HQ dataset at 256×256.     |
-| ├  [iafaces_cam-celebahq-256.pth](https://drive.google.com/file/d/1Xm9juPMree52CdijllgbBqq_2I620VwE/view?usp=share_link) | IA-FaceS-CAM trained with CelebA-HQ dataset at 256×256. |
-| ├  [iafaces-ffhq-1024.pth](https://drive.google.com/file/d/1DW6Ger9rSfHyn9mZabCWWfhhqfrdPJvY/view?usp=share_link) | IA-FaceS trained with FFHQ dataset at 1024×1024.        |
-| ├  [iafaces_cam-ffhq-1024.pth](https://drive.google.com/file/d/1czzv-3fWqHUbFCMT2TLTdM1bf6zuZ8WY/view?usp=share_link) | IA-FaceS-CAM trained with FFHQ dataset at 1024×1024.    |
-
-Download the pre-trained networks and put them to "iafaces-evacheckpoints/".
-
-## Train networks
+## Datasets and quantitative experiments
 
 ---
 
-Once the datasets are set up, you can train the networks as follows:
+To obtain the COCO-animals-10k dataset, download images and masks from  [COCOA-10k](https://drive.google.com/file/d/17wOT2Du1oKMU8DtRWupR_m1mgWvnGl1I/view?usp=sharing). Unzip the file and put it into "data/coco-animals".
 
-1. Edit `configs/<EXP_ID>.json` to specify the dataset, model and training configurations.
-1. Run the training script with `python train.py -c configs/<EXP_ID>.json `. For example, 
-```bash
- # train IA-FaceS with CelebA-HQ (256px) dataset, with a batch size of 16
-python train.py -c configs/iafaces-celebahq-256.json --bz 16
-```
+Download pre-trained weights,  [Stable Diffusion v1-4](https://huggingface.co/CompVis/stable-diffusion-v1-4)  and [xxmix9realistic ](https://civitai.com/models/47274/xxmix9realistic),  and put them into "models/ldm/stable-diffusion-v1/".
 
-   The code will use all GPUS by default, please specify the devices you want to use by:
-
-```bash
- # train IA-FaceS in parallel, with a batch size of 16 (paper setting on celebahq)
-CUDA_VISIBLE_DEVICES=0,1 python train.py -c configs/iafaces-celebahq-256.json --bz 8
-```
-
-3. The checkpoints are written to a newly created directory `saved/models/<EXP_ID>`
-
-## Edit images 
-
----
-
-If you want to edit images using pre-trained models, go into the "iafaces-eval/" folder.
-
-For **attribute manipulation**, 
-
-To compute the attribute direction, run:
+For **object editing**, run:
 
 ```
 # collect latent codes
-python collect_latent_codes.py --data_path <DATA_LIST> --img_dir <IAMGE_DIR> --resume <CHECKPOINT>
-python train_boundary.py --index <COMPONENT INDEX> --pose_attr <POSITIVE ATTRIBUTE> --neg_attr <NEGTIVE ATTRIBUTE> --expr <EXP ID>
+python edit_coco_object.py --out_dir <OUT_DIR> --ckpt <CHECKPOINT>
 ```
 
-To edit face attribute, run:
+For **background editing**, run:
 
 ```
-python attr_manipulation.py --attr <ATTRIBUTE> --data_path <DATA_LIST> --img_dir <IAMGE_DIR> --resume <CHECKPOINT>
+python edit_coco_background.py --out_dir <OUT_DIR> --ckpt <CHECKPOINT>
 ```
-
-For **face component transfer**, run:
-
-```bash
-python component_transfer.py --component <COMPONENT> --target <TARGET_LIST> --reference <REFERENCE_LIST> --img_dir <IAMGE_DIR> --resume <CHECKPOINT>
-```
-
-For **image reconstruction**, run:
-
-```bash
-python reconstruction.py --data_path <DATA_LIST> --img_dir <IAMGE_DIR> --resume <CHECKPOINT>
-```
-
-The results are saved to `output/`.
-
-If you want to see details, please follow `iafaces-eval/README.md`.
 
 ## Acknowledgement
 
 ---
-This repository used some codes in 
+This repository used some codes in  [dpm-solver ](https://github.com/LuChengTHU/dpm-solver).

@@ -1,0 +1,10 @@
+tqdm
+einops
+pytorch-lightning==1.4.2
+torchmetrics==0.6.0
+omegaconf
+opencv-python
+transformers==4.28.0
+safetensors
+ipykernel
+jupyter
