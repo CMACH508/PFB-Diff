@@ -45,7 +45,7 @@ Unzip the downloaded file and put it into "data/coco-animals".
 
 **Prepare pre-trained models**:
 
-Download pre-trained weights, [Stable Diffusion v1-4](https://huggingface.co/CompVis/stable-diffusion-v1-4) and [xxmix9realistic ](https://civitai.com/models/47274/xxmix9realistic),  and put them into "models/ldm/stable-diffusion-v1/".
+Download pre-trained weights, [Stable Diffusion v1-4](https://huggingface.co/CompVis/stable-diffusion-v-1-4-original/tree/main) and [xxmix9realistic ](https://civitai.com/models/47274/xxmix9realistic),  and put them into "models/ldm/stable-diffusion-v1/".
 
 For **object editing**, run:
 
