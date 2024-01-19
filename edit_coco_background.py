@@ -30,7 +30,7 @@ img_list = make_dataset_txt('data/coco/back_list.txt')
 with open('data/coco/back_data.pkl', 'rb') as f:
     data = pickle.load(f)
 
-root_dir = '/home/huangwenjing/data/coco_animals'
+root_dir = 'data/coco_animals'
 # define hyper-parameters
 fusion_layers = {
     "encoder": [7, 8, 9, 10, 11, 12],

@@ -29,7 +29,7 @@ sampler.make_schedule(ddim_num_steps=opt.ddim_steps,
 img_list = make_dataset_txt('data/coco/object_list.txt')
 with open('data/coco/data.pkl', 'rb') as f:
     data = pickle.load(f)
-root_dir = '/home/huangwenjing/data/coco_animals'
+root_dir = 'data/coco_animals'
 # define hyper-parameters
 fusion_layers = {
     "encoder": [8, 9, 10, 11, 12],

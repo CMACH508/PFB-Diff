@@ -35,9 +35,17 @@ For a quick start, we recommend taking a look at the notebook: [**pfbdiff.ipynb*
 
 ---
 
-To obtain the COCO-animals-10k dataset, download images and masks from  [COCOA-10k](https://drive.google.com/file/d/17wOT2Du1oKMU8DtRWupR_m1mgWvnGl1I/view?usp=sharing). Unzip the file and put it into "data/coco-animals".
+**Prepare datasets**:
 
-Download pre-trained weights,  [Stable Diffusion v1-4](https://huggingface.co/CompVis/stable-diffusion-v1-4)  and [xxmix9realistic ](https://civitai.com/models/47274/xxmix9realistic),  and put them into "models/ldm/stable-diffusion-v1/".
+To obtain the COCO-animals-10k dataset, download images and masks from the following link: 
+
+Link: https://pan.baidu.com/s/1BIlcqy1f6exLnPFIBhyamQ   Password: 8888 
+
+Unzip the downloaded file and put it into "data/coco-animals".
+
+**Prepare pre-trained models**:
+
+Download pre-trained weights, [Stable Diffusion v1-4](https://huggingface.co/CompVis/stable-diffusion-v1-4) and [xxmix9realistic ](https://civitai.com/models/47274/xxmix9realistic),  and put them into "models/ldm/stable-diffusion-v1/".
 
 For **object editing**, run:
 
