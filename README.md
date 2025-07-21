@@ -7,8 +7,9 @@ This repository contains the **official PyTorch implementation** of the paper:
 **PFB-Diff: Progressive Feature Blending Diffusion for Text-driven Image Editing**
 
 > **Abstract:** Diffusion models have demonstrated their ability to generate diverse and high-quality images, sparking considerable interest in their potential for real image editing applications. However, existing diffusion-based approaches for local image editing often suffer from undesired artifacts due to the latent-level blending of the noised target images and diffusion latent variables, which lack the necessary semantics for maintaining image consistency. To address these issues, we propose PFB-Diff, a Progressive Feature Blending method for Diffusion-based image editing. Unlike previous methods, PFB-Diff seamlessly integrates text-guided generated content into the target image through multi-level feature blending. The rich semantics encoded in deep features and the progressive blending scheme from high to low levels ensure semantic coherence and high quality in edited images. Additionally, we introduce an attention masking mechanism in the cross-attention layers to confine the impact of specific words to desired regions, further improving the performance of background editing and multi-object replacement. PFB-Diff can effectively address various editing tasks, including object/background replacement and object attribute editing. Our method demonstrates its superior performance in terms of editing accuracy and image quality without the need for fine-tuning or training.
-Paper Link: https://www.sciencedirect.com/science/article/pii/S0893608024007019?via%3Dihub
-arXiv link: [https://arxiv.org/abs/2306.16894](https://arxiv.org/abs/2306.16894)
+---
+[[Paper (Neural Networks)](https://www.sciencedirect.com/science/article/pii/S0893608024007019?via%3Dihub)]
+[[Paper (arXiv)](https://arxiv.org/abs/2306.16894)]
 ## Installation
 
 ---
