@@ -66,3 +66,17 @@ python edit_coco_background.py --out_dir <OUT_DIR> --ckpt <CHECKPOINT>
 
 ---
 This repository used some codes in  [dpm-solver ](https://github.com/LuChengTHU/dpm-solver).
+
+## Citation
+If you find PFBDiff useful for your project or research, welcome to 🌟 this repo and cite our work using the following BibTeX:
+```bibtex
+@article{huang2025pfb,
+  title={Pfb-diff: Progressive feature blending diffusion for text-driven image editing},
+  author={Huang, Wenjing and Tu, Shikui and Xu, Lei},
+  journal={Neural Networks},
+  volume={181},
+  pages={106777},
+  year={2025},
+  publisher={Elsevier}
+}
+```
