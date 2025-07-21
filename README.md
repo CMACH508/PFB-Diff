@@ -1,26 +1,21 @@
 <h1 align="center">LivePortrait: Efficient Portrait Animation with Stitching and Retargeting Control</h1>
 
 <div align='center'>
-    <a target='_blank'><strong>Wenjing Huang</strong></a><sup> 1*†</sup>&emsp;
-    <a target='_blank'><strong>Shikui Tu</strong></a><sup> 1,2*</sup>&emsp;
-    <a target='_blank'><strong>Lei Xu</strong></a><sup> 1</sup>&emsp;
+    <a target='_blank'><strong>Wenjing Huang</strong></a><sup> </sup>&emsp;
+    <a target='_blank'><strong>Shikui Tu</strong></a><sup> </sup>&emsp;
+    <a target='_blank'><strong>Lei Xu</strong></a><sup></sup>&emsp;
 </div>
 
 <br>
 
-<!-- ===== PFBDiff – Quick Start & Links ===== -->
 <div align="center">
 
-
-  <!-- 📄 Paper / project / GitHub stats -->
   <p>
     <a href="https://arxiv.org/abs/2306.16894" target="_blank"><img src="https://arxiv.org/static/browse/0.3.4/images/arxiv-logo-one-color-white.svg" alt="arXiv link"></a>&nbsp;
     <a href="https://www.sciencedirect.com/science/article/pii/S0893608024007019?via%3Dihub" target="_blank"><img src="https://sdfestaticassets-us-east-1.sciencedirectassets.com/prod/aad5f4aa7302821642b373546c7d00519b6fd7a1/image/elsevier-non-solus.svg" alt="Neural Networks"></a>&nbsp;
-
   </p>
 
 </div>
-<!-- ===== /LivePortrait ===== -->
 
 
 ## PFB-Diff — Official PyTorch Implementation
