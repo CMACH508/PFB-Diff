@@ -12,7 +12,6 @@ This repository contains the **official PyTorch implementation** of the paper:
 [[Paper (arXiv)](https://arxiv.org/abs/2306.16894)]
 ## Installation
 
----
 
 Install the dependencies:
 ```bash
@@ -29,13 +28,11 @@ python -m ipykernel install --user --name=pfb-diff
 
 ## Quick start
 
----
 
 For a quick start, we recommend taking a look at the notebook: [**pfbdiff.ipynb**](https://github.com/CMACH508/PFB-Diff/blob/main/pdfbdiff.ipynb). The notebook contains end-to-end examples of the usage of PFB-Diff in image editing.
 
 ## Datasets and quantitative experiments
 
----
 
 **Prepare datasets**:
 
@@ -64,7 +61,6 @@ python edit_coco_background.py --out_dir <OUT_DIR> --ckpt <CHECKPOINT>
 
 ## Acknowledgement
 
----
 This repository used some codes in  [dpm-solver ](https://github.com/LuChengTHU/dpm-solver).
 
 ## Citation
