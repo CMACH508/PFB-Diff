@@ -1,4 +1,4 @@
-<h1 align="center">LivePortrait: Efficient Portrait Animation with Stitching and Retargeting Control</h1>
+<h1 align="center">PFB-Diff: Progressive Feature Blending diffusion for text-driven image editing</h1>
 
 <div align='center'>
     <a target='_blank'><strong>Wenjing Huang</strong></a><sup> </sup>&emsp;
